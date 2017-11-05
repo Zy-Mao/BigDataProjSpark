@@ -15,19 +15,6 @@ import java.util.Iterator;
 
 public class WordCountDemo {
 	public static void main(String[] args) {
-
-
-		// 如果要在spark集群上运行，需要修改的，只有两个地方
-		// 第一，将SparkConf的setMaster()方法给删掉，默认它自己会去连接
-		// 第二，我们针对的不是本地文件了，修改为hadoop hdfs上的真正的存储大数据的文件
-
-		// 实际执行步骤：
-		// 1、将spark.txt文件上传到hdfs上去
-		// 2、使用我们最早在pom.xml里配置的maven插件，对spark工程进行打包
-		// 3、将打包后的spark工程jar包，上传到机器上执行
-		// 4、编写spark-submit脚本
-		// 5、执行spark-submit脚本，提交spark应用到集群执行
-
 //		SparkConf sparkConf = new SparkConf().setAppName("Example Spark App").setMaster("local[*]");  // Delete this line when submitting to a cluster
 		SparkConf sparkConf = new SparkConf().setMaster("local").setAppName("Word Count");
 		JavaSparkContext sparkContext = new JavaSparkContext(sparkConf);
