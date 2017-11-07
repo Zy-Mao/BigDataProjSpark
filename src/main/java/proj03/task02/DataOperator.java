@@ -95,6 +95,9 @@ public class DataOperator {
 		}
 	}
 	public static void main(String[] args) throws Exception {
+//		float i = (float) 3.9;
+//		int j = (int) 5 / 6;
+//		System.out.println(j);
 		new DataOperator().generatePoint();
 	}
 }
